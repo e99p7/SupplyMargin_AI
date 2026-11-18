@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SupplyMargin AI — прогноз спроса и оптимизация маржинальности по вашим таблицам.">
+  <title>SupplyMargin AI — данные в решения</title>
+  <link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <header class="site-header">
+    <a class="brand" href="#" data-route="home" aria-label="SupplyMargin AI">
+      <span class="brand-mark">SM</span>
+      <span>SupplyMargin <b>AI</b></span>
+    </a>
+    <nav id="public-nav" class="nav-links">
+      <a href="#features">Возможности</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#contacts">Контакты</a>
+      <button class="button ghost" data-action="open-login">Войти</button>
+      <button class="button primary" data-action="open-register">Попробовать</button>
+    </nav>
+    <nav id="private-nav" class="nav-links hidden">
+      <span id="header-email" class="muted"></span>
+      <a href="#contacts" class="header-contact-link">Контакты</a>
+      <button class="button ghost" data-action="logout">Выйти</button>
+    </nav>
+  </header>
+
+  <main id="public-page">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Прогнозирование спроса · Контроль маржи · Закупки</span>
+        <h1>Таблица превращается<br>в финансовое решение</h1>
+        <p class="hero-text">Загрузите CSV или Excel — SupplyMargin AI спрогнозирует спрос, проверит качество данных и предложит безопасные цены и объём заказа.</p>
+        <div class="hero-actions">
+          <button class="button primary large" data-action="open-register">Начать работу</button>
+          <a class="button secondary large" href="#features">Как это работает</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ Данные каждого клиента изолированы</span>
+          <span>✓ История и версии сохраняются</span>
+          <span>✓ Работает на CPU</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Пример аналитического кабинета">
+        <div class="visual-top"><span></span><span></span><span></span><b>Маржинальность</b></div>
+        <div class="metric-grid">
+          <article><small>Прогноз прибыли</small><strong>₽ 2,48 млн</strong><em>+12,4%</em></article>
+          <article><small>SKU в расчёте</small><strong>1 284</strong><em>готово</em></article>
+        </div>
+        <div class="chart-card">
+          <div class="chart-bars"><i style="height:34%"></i><i style="height:49%"></i><i style="height:41%"></i><i style="height:68%"></i><i style="height:61%"></i><i style="height:82%"></i><i style="height:91%"></i></div>
+          <div class="chart-label"><span>До оптимизации</span><b>После оптимизации</b></div>
+        </div>
+        <div class="recommendation"><span>AI</span><p><b>Рекомендации готовы</b><small>Обнаружено 84 точки роста маржи</small></p><strong>→</strong></div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-heading"><span class="eyebrow">Один понятный процесс</span><h2>От загрузки до результата</h2><p>Не нужно переносить данные вручную или разбираться в ML-моделях.</p></div>
+      <div class="steps-grid">
+        <article><span>01</span><h3>Загрузите данные</h3><p>CSV или XLSX с продажами, ценами, затратами и остатками.</p></article>
+        <article><span>02</span><h3>Проверьте качество</h3><p>Сервис покажет пропуски, допущения и уровень готовности данных.</p></article>
+        <article><span>03</span><h3>Запустите расчёт</h3><p>CPU-модель обучится на вашей истории и построит прогноз.</p></article>
+        <article><span>04</span><h3>Получите Excel</h3><p>Скачайте рекомендации по ценам, закупкам и маржинальности.</p></article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+      <div class="section-heading"><span class="eyebrow">Прозрачные условия</span><h2>Тарифы</h2></div>
+      <div id="public-plans" class="plans-grid"></div>
+    </section>
+  </main>
+
+  <main id="app-page" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="sidebar-title">Личный кабинет</div>
+      <button class="side-link active" data-view="overview"><span>⌂</span>Обзор</button>
+      <button class="side-link" data-view="datasets"><span>▤</span>Мои таблицы</button>
+      <button class="side-link" data-view="runs"><span>◫</span>Расчёты</button>
+      <button class="side-link" data-view="billing"><span>₽</span>Подписка</button>
+      <div class="sidebar-bottom">
+        <div class="safety-badge"><i></i><p><b>Изолированное хранение</b><small>Файлы доступны только вам</small></p></div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <div id="view-overview" class="view-panel">
+        <div class="page-heading"><div><span class="eyebrow">SupplyMargin AI</span><h2>Обзор</h2><p>Данные, расчёты и рекомендации в одном месте.</p></div><button class="button primary" data-view-target="datasets">+ Загрузить таблицу</button></div>
+        <div class="stat-grid">
+          <article><small>Таблицы</small><strong id="stat-datasets">0</strong><span>сохранено</span></article>
+          <article><small>Расчёты</small><strong id="stat-runs">0</strong><span>за всё время</span></article>
+          <article><small>Готовые результаты</small><strong id="stat-completed">0</strong><span>можно скачать</span></article>
+          <article><small>Подписка</small><strong id="stat-subscription">—</strong><span id="stat-subscription-date">проверяем</span></article>
+        </div>
+        <div class="content-grid">
+          <section class="panel"><div class="panel-head"><h3>Последние расчёты</h3><button class="text-button" data-view-target="runs">Все расчёты →</button></div><div id="recent-runs" class="empty-state compact"><b>Расчётов пока нет</b><span>Загрузите первую таблицу и запустите оптимизацию.</span></div></section>
+          <section class="panel quick-panel"><h3>Быстрый старт</h3><ol><li><i>1</i><span><b>Подготовьте CSV/XLSX</b><small>Минимум 20 валидных периодов</small></span></li><li><i>2</i><span><b>Загрузите таблицу</b><small>Сервис проверит колонки</small></span></li><li><i>3</i><span><b>Запустите оптимизацию</b><small>Результат появится в истории</small></span></li></ol></section>
+        </div>
+      </div>
+
+      <div id="view-datasets" class="view-panel hidden">
+        <div class="page-heading"><div><span class="eyebrow">Ваши данные</span><h2>Мои таблицы</h2><p>Исходные файлы и все версии сохраняются.</p></div></div>
+        <section id="subscription-warning" class="notice warning hidden"><b>Нужна активная подписка</b><span>Оплатите тариф, чтобы загружать таблицы и запускать расчёты.</span><button class="button primary" data-view-target="billing">Выбрать тариф</button></section>
+        <section class="upload-card">
+          <form id="upload-form">
+            <label class="dropzone" for="dataset-file"><input id="dataset-file" name="file" type="file" accept=".csv,.xlsx" required><span class="upload-icon">⇧</span><b>Перетащите CSV или XLSX</b><small>или нажмите для выбора · до лимита вашего тарифа</small><em id="chosen-file">Файл не выбран</em></label>
+            <div class="upload-controls"><label>Название таблицы<input id="dataset-name" name="name" maxlength="200" placeholder="Например, продажи за 2026 год"></label><button class="button primary" type="submit">Загрузить и проверить</button></div>
+          </form>
+        </section>
+        <div id="datasets-list" class="cards-list"><div class="empty-state"><b>Таблиц пока нет</b><span>Загрузите CSV или XLSX, чтобы начать.</span></div></div>
+      </div>
+
+      <div id="view-runs" class="view-panel hidden">
+        <div class="page-heading"><div><span class="eyebrow">История</span><h2>Расчёты</h2><p>Статус обработки, метрики модели и готовые Excel-файлы.</p></div><button class="button secondary" data-action="refresh-runs">Обновить</button></div>
+        <div id="runs-list" class="cards-list"><div class="empty-state"><b>Расчётов пока нет</b><span>Откройте таблицу и запустите оптимизацию.</span></div></div>
+      </div>
+
+      <div id="view-billing" class="view-panel hidden">
+        <div class="page-heading"><div><span class="eyebrow">Управление доступом</span><h2>Подписка</h2><p>После подтверждения оплаты доступ включается автоматически.</p></div></div>
+        <section id="current-subscription" class="subscription-card"></section>
+        <div id="private-plans" class="plans-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="auth-dialog" class="auth-dialog">
+    <button class="dialog-close" data-action="close-dialog" aria-label="Закрыть">×</button>
+    <div class="auth-brand"><span class="brand-mark">SM</span><h2 id="auth-title">Вход</h2><p id="auth-subtitle">Продолжите работу с вашими таблицами.</p></div>
+    <form id="login-form" class="auth-form">
+      <label>Электронная почта<input name="email" type="email" autocomplete="email" required placeholder="name@company.ru"></label>
+      <label>Пароль<input name="password" type="password" autocomplete="current-password" required placeholder="Ваш пароль"></label>
+      <button class="button primary large" type="submit">Войти</button>
+      <p>Нет аккаунта? <button type="button" class="text-button" data-action="open-register">Зарегистрироваться</button></p>
+    </form>
+    <form id="register-form" class="auth-form hidden">
+      <label>Электронная почта<input name="email" type="email" autocomplete="email" required placeholder="name@company.ru"></label>
+      <label>Пароль<input name="password" type="password" autocomplete="new-password" minlength="7" required placeholder="Минимум 7 символов"></label>
+      <button class="button primary large" type="submit">Создать аккаунт</button>
+      <p>Уже зарегистрированы? <button type="button" class="text-button" data-action="open-login">Войти</button></p>
+    </form>
+  </dialog>
+
+  <dialog id="run-dialog" class="run-dialog">
+    <button class="dialog-close" data-action="close-run-dialog" aria-label="Закрыть">×</button>
+    <span class="eyebrow">Новый расчёт</span><h2>Параметры оптимизации</h2>
+    <form id="run-form" class="run-form">
+      <input id="run-version-id" type="hidden">
+      <label>Горизонт, периодов<input id="run-horizon" type="number" min="1" max="365" value="14" required></label>
+      <label>Минимальная маржа<input id="run-margin" type="number" min="0" max="0.9" step="0.01" value="0.15" required></label>
+      <label>Макс. изменение цены<input id="run-price-change" type="number" min="0" max="1" step="0.01" value="0.15" required></label>
+      <label>Уровень сервиса<input id="run-service-level" type="number" min="0.5" max="0.999" step="0.01" value="0.90" required></label>
+      <button class="button primary large" type="submit">Запустить оптимизацию</button>
+    </form>
+  </dialog>
+
+  <dialog id="result-dialog" class="result-dialog">
+    <button class="dialog-close" data-action="close-result-dialog" aria-label="Закрыть">×</button>
+    <span class="eyebrow">Результат SupplyMargin AI</span><h2>Рекомендации</h2>
+    <div id="result-summary" class="result-summary"></div>
+    <div class="table-scroll"><table><thead><tr><th>SKU</th><th>Текущая цена</th><th>Рекомендованная</th><th>Заказать</th><th>Ожид. прибыль</th></tr></thead><tbody id="result-table"></tbody></table></div>
+    <button id="result-download" class="button primary">Скачать полный Excel</button>
+  </dialog>
+
+  <section id="contacts" class="section contacts-section">
+    <div class="section-heading"><span class="eyebrow">Мы на связи</span><h2>Контакты</h2><p>Если возникли вопросы по загрузке данных или расчётам — напишите в техподдержку.</p></div>
+    <div class="contacts-grid">
+      <a class="contact-card" href="https://t.me/supplymargin_ai" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon telegram-icon" aria-hidden="true">➤</span>
+        <span><small>Техническая поддержка в Telegram</small><strong>@supplymargin_ai</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="contact-card" href="mailto:supplymargin.ai.chat@yandex.ru">
+        <span class="contact-icon mail-icon" aria-hidden="true">✉</span>
+        <span><small>Электронная почта</small><strong>supplymargin.ai.chat@yandex.ru</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+  <footer id="site-footer">SupplyMargin AI · безопасный режим внедрения: shadow · <a href="/docs">API</a></footer>
+  <script src="/static/app.js?v=9" defer></script>
+</body>
+</html>

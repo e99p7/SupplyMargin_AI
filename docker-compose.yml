@@ -1,0 +1,57 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      SUPPLYMARGIN_DATABASE_URL: sqlite:////app/data/results/supplymargin_saas.sqlite3
+      SUPPLYMARGIN_STORAGE_BACKEND: local
+      SUPPLYMARGIN_OBJECT_STORE_DIR: /app/data/objects
+    ports:
+      - "8000:8000"
+    volumes:
+      - supplymargin_data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 25s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+
+  worker:
+    build: .
+    restart: unless-stopped
+    command: ["python", "-m", "supplymargin.worker"]
+    env_file:
+      - .env
+    environment:
+      SUPPLYMARGIN_DATABASE_URL: sqlite:////app/data/results/supplymargin_saas.sqlite3
+      SUPPLYMARGIN_STORAGE_BACKEND: local
+      SUPPLYMARGIN_OBJECT_STORE_DIR: /app/data/objects
+    volumes:
+      - supplymargin_data:/app/data
+    depends_on:
+      api:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 4G
+
+volumes:
+  supplymargin_data:
