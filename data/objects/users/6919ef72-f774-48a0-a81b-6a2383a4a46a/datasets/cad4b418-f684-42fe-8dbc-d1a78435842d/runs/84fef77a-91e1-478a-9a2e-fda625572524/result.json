@@ -1,0 +1,324 @@
+{
+  "summary": {
+    "run_id": "84fef77a-91e1-478a-9a2e-fda625572524",
+    "created_at": "2026-10-21T18:09:26.551617+00:00",
+    "as_of": "2026-06-01",
+    "rows_used": 18,
+    "sku_count": 3,
+    "mode": "demand_forecast",
+    "model_name": "HistGradientBoostingRegressor",
+    "validation_wape": 0.09033,
+    "validation_mae": 5.66039,
+    "validation_available": true,
+    "horizon_periods": 14,
+    "expected_profit_before": null,
+    "expected_profit_after": null,
+    "expected_profit_gain": null,
+    "execution_mode": "forecast_only"
+  },
+  "recommendations": [
+    {
+      "sku": "SKU-001",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 979.81,
+      "forecast_p10": 956.73,
+      "forecast_p90": 1002.89,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        69.0066,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    },
+    {
+      "sku": "SKU-002",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 923.47,
+      "forecast_p10": 901.09,
+      "forecast_p90": 945.85,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        47.1343,
+        51.7559,
+        61.9787,
+        61.9787,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    },
+    {
+      "sku": "SKU-003",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 980.87,
+      "forecast_p10": 956.41,
+      "forecast_p90": 1005.32,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    }
+  ],
+  "forecasts": [
+    {
+      "sku": "SKU-001",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 979.81,
+      "forecast_p10": 956.73,
+      "forecast_p90": 1002.89,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        69.0066,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    },
+    {
+      "sku": "SKU-002",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 923.47,
+      "forecast_p10": 901.09,
+      "forecast_p90": 945.85,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        47.1343,
+        51.7559,
+        61.9787,
+        61.9787,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    },
+    {
+      "sku": "SKU-003",
+      "recommendation_type": "demand_forecast",
+      "forecast_units": 980.87,
+      "forecast_p10": 956.41,
+      "forecast_p90": 1005.32,
+      "horizon_periods": 14,
+      "period_days": 30,
+      "forecast_path": [
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618,
+        70.0618
+      ]
+    }
+  ],
+  "market": {
+    "as_of": "2026-07-25",
+    "updated_at": "2026-07-25T00:00:00+03:00",
+    "country": "RU",
+    "currency": "RUB",
+    "actual": {
+      "key_rate_percent": 14.25,
+      "key_rate_observation_date": "2026-07-24",
+      "announced_key_rate_percent": 14.0,
+      "announced_key_rate_date": "2026-07-24",
+      "inflation_yoy_percent": 5.9,
+      "inflation_observation_date": "2026-07-20",
+      "inflation_june_yoy_percent": 6.0,
+      "business_demand_expectations": "down",
+      "business_demand_expectations_ru": "снижаются",
+      "consumer_growth_outlook": "slower_in_h2_2026",
+      "fuel_price_signal": "one_off_upward_shock",
+      "gdp_growth_2026_percent_range": [
+        0.0,
+        1.0
+      ],
+      "macro_history": [
+        {
+          "month": "01.2026",
+          "key_rate": 16.0,
+          "inflation_yoy": 6.0,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "02.2026",
+          "key_rate": 15.5,
+          "inflation_yoy": 5.9,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "03.2026",
+          "key_rate": 15.0,
+          "inflation_yoy": 5.9,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "04.2026",
+          "key_rate": 14.5,
+          "inflation_yoy": 5.6,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "05.2026",
+          "key_rate": 14.5,
+          "inflation_yoy": 5.3,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "06.2026",
+          "key_rate": 14.25,
+          "inflation_yoy": 6.0,
+          "inflation_target": 4.0
+        },
+        {
+          "month": "07.2026",
+          "key_rate": 14.25,
+          "inflation_yoy": 5.9,
+          "inflation_target": 4.0
+        }
+      ]
+    },
+    "forecast_2026": {
+      "inflation_percent_range": [
+        6.0,
+        7.0
+      ],
+      "average_key_rate_percent_range": [
+        14.5,
+        14.6
+      ],
+      "gdp_growth_percent_range": [
+        0.0,
+        1.0
+      ],
+      "narrative_ru": "Высокая стоимость капитала, топливный шок и ослабление ожиданий спроса требуют одновременно защищать маржу и сокращать риск избыточного запаса."
+    },
+    "scenarios": {
+      "base": {
+        "demand_factor": 0.97,
+        "cost_growth_percent": 6.5,
+        "description_ru": "Умеренное замедление спроса, инфляция в середине диапазона ЦБ."
+      },
+      "optimistic": {
+        "demand_factor": 1.03,
+        "cost_growth_percent": 6.0,
+        "description_ru": "Спрос устойчивее ожиданий, нижняя граница инфляционного прогноза."
+      },
+      "stress": {
+        "demand_factor": 0.9,
+        "cost_growth_percent": 9.0,
+        "description_ru": "Слабый спрос и ускоренный перенос топлива/логистики в закупочную цену."
+      }
+    },
+    "sources": {
+      "cbr_key_rate_release": "https://www.cbr.ru/press/pr/?file=24072026_133000key.htm",
+      "cbr_inflation_june": "https://www.cbr.ru/analytics/dkp/dinamic/CPD_2026-6/",
+      "cbr_macro_table": "https://www.cbr.ru/hd_base/infl/",
+      "mintrans_epd": "https://mintrans.gov.ru/press-center/news/12779"
+    },
+    "disclaimer_ru": "Рыночный снимок фиксирует доступные официальные данные на указанную дату. Это входной сценарий модели, а не гарантия будущих значений."
+  },
+  "warnings": [
+    "Выполнен только прогноз спроса. Финансовая оптимизация отключена: недостаточно подтверждённых фактических данных.",
+    "Не хватает данных: заказы в пути, стоимость обработки, стоимость хранения, фактическая обработка, фактическое хранение."
+  ],
+  "model_metadata": {
+    "model_name": "HistGradientBoostingRegressor",
+    "training_rows": 12,
+    "validation_wape": 0.09032544853946081,
+    "validation_mae": 5.660394775139544,
+    "period_days": 30,
+    "sku_count": 3,
+    "forecast_method": "global_gradient_boosting",
+    "validation_available": true,
+    "validation_note": null
+  },
+  "options": {
+    "horizon": 14,
+    "min_margin": 0.15,
+    "max_price_change": 0.15,
+    "service_level": 0.9,
+    "risk_aversion": 0.25,
+    "random_seed": 42
+  },
+  "execution": {
+    "mode": "forecast_only",
+    "financial_optimization_skipped": true,
+    "missing_financial_data": [
+      "заказы в пути",
+      "стоимость обработки",
+      "стоимость хранения",
+      "фактическая обработка",
+      "фактическое хранение"
+    ]
+  },
+  "data_lineage": {
+    "source_kind": "canonical",
+    "financial_optimization_available": false,
+    "missing_financial_data": [
+      "заказы в пути",
+      "стоимость обработки",
+      "стоимость хранения",
+      "фактическая обработка",
+      "фактическое хранение"
+    ]
+  }
+}

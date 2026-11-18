@@ -1,0 +1,19 @@
+{
+  "run_id": "51a0c7cc-a192-4366-a043-eb1f5f012570",
+  "user_id": "6919ef72-f774-48a0-a81b-6a2383a4a46a",
+  "dataset_id": "c0658537-9f3f-4a1b-a3fd-9d0dc00bc888",
+  "dataset_version_id": "4180b5f4-6670-420d-a82c-c8920f39f3bb",
+  "dataset_sha256": "722ceed074f063a5d0da7f749c8cb6301ee12d71b8d8048af7eb8e325a3abe26",
+  "created_at": "2026-10-21T16:32:56.375304+00:00",
+  "python_version": "3.14.8",
+  "scikit_learn_version": "1.9.1",
+  "model_name": "PersistenceBaseline",
+  "training_rows": 0,
+  "validation_wape": 1.0,
+  "validation_mae": 0.0,
+  "period_days": 1,
+  "sku_count": 100,
+  "forecast_method": "persistence_baseline",
+  "validation_available": false,
+  "validation_note": "Метрики качества не рассчитывались: недостаточно временной истории. Использован базовый прогноз по последнему наблюдению."
+}
