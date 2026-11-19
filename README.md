@@ -42,10 +42,12 @@ walk-away ceiling.
 Требуется Python 3.11–3.13.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate              # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python cli.py demo --horizon 3
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1  #Windows: .venv\Scripts\activate
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass              
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
 uvicorn supplymargin.api:app --host 0.0.0.0 --port 8000
 # В отдельном терминале:
 python -m supplymargin.worker
